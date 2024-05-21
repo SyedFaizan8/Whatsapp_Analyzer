@@ -97,6 +97,7 @@ function isNonPersonalOrEventMessage(message) {
     /changed their phone number/i, // Ignore phone number change messages
     /updated the message timer/i, // Ignore message timer update messages
     /turned off disappearing messages/i, // Ignore disappearing messages turned off
+    /You started a call/i,
   ];
 
   // Check if the message matches any of the non-personal or event patterns
@@ -110,7 +111,7 @@ function isNonPersonalOrEventMessage(message) {
   return false;
 }
 
-const filePath = "prime_b.txt"; // Replace with the path to your file
+const filePath = "encrypt.txt"; // Replace with the path to your file
 const chatStats = analyzeWhatsAppChat(filePath);
 console.log("Total Messages:", chatStats.totalMessages);
 console.log("Message Counts by Sender:", chatStats.messageCount);
